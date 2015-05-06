@@ -7,16 +7,21 @@
  */
 
 var gulp       = require('gulp');
-var browserify = require('gulp-browserify');
+var browserify = require('browserify');
+var babelify   = require('babelify');
+var source     = require('vinyl-source-stream');
 
 // == Register task: scripts
 gulp.task('scripts', ['lint'], function(){
   
-  gulp.src('app/*.js')
-    .pipe(browserify({
-      insertGlobals: false
-    }))
-    .pipe(gulp.dest('build/'));
+  browserify({
+    entries: './app/js/app.js',
+    insertGlobals: false
+  })
+  .transform(babelify)
+  .bundle()
+  .pipe(source('app.js'))
+  .pipe(gulp.dest('build/js'));
 
 });
 

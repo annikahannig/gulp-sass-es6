@@ -8,4 +8,6 @@ bower_components/
 *.swp
 *.swo
 
+.sass-cache/
+
 

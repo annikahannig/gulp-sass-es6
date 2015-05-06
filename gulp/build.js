@@ -25,9 +25,7 @@ tasks.forEach(function(task){
 // == Register build task.
 gulp.task('build', function() {
   runSequence([
-    'bower_components',
     'html',
-    'angular',
     'scripts',
     'stylesheets',
     'assets'

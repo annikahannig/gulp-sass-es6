@@ -1,0 +1,21 @@
+
+@import 'lib/base';
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+
+article {
+  .moin {
+    padding: 80px;
+    margin: 100px;
+    box-shadow: 0px 2px 45px #888;
+  }
+}
+
+
